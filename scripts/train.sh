@@ -2,8 +2,8 @@
 RECIPE_ROOT="recipes/train_configs"
 
 CONFIGS=(
-    grpo_two_stage-qwen3-4b-MAS-CR-DB-NS-OR-mmlupro.yaml
-    grpo_two_stage-qwen3-4b-MAS-DB-NS-OR-mmlupro.yaml
+    grpo_two_stage-qwen3-4b-MAS-CR-NS-OR-gpqa.yaml
+    grpo_two_stage-qwen3-4b-MAS-CR-NS-OR-mmlupro.yaml
 )
 
 export CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7"

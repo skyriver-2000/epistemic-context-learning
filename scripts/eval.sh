@@ -11,151 +11,41 @@ export MAX_WORKERS_NUM=64
 # vLLM Server Configuration
 # ==============================
 VLLM_MODELS=(
-    # ============
     # Base
-    # ============
-    # Qwen/Qwen3-4B-Instruct-2507
-    Qwen/Qwen3-8B
-    # Qwen/Qwen3-30B-A3B-Thinking-2507
+    Qwen/Qwen3-4B-Instruct-2507
 
-    # ============
-    # nonMAS
-    # ============
+    # SA
     # saved/gpqa/grpo-two-stage-qwen3-4b-nonMAS-NS-TUNE-OR/checkpoint-89
-    # saved/gpqa/grpo-two-stage-qwen3-8b-nonMAS-NS-TUNE-OR/checkpoint-89
 
-    # saved/mmlu_pro/grpo-two-stage-qwen3-4b-nonMAS-NS-TUNE-OR/checkpoint-202
-    # saved/mmlu_pro/grpo-two-stage-qwen3-8b-nonMAS-NS-TUNE-OR/checkpoint-202
-
-    # ============
     # AG
-    # ============
     # saved/gpqa/grpo-two-stage-qwen3-4b-AG-TUNE-OR/checkpoint-89
-    # saved/gpqa/grpo-two-stage-qwen3-8b-AG-TUNE-OR/checkpoint-89
-
-    # saved/mmlu_pro/grpo-two-stage-qwen3-4b-AG-TUNE-OR/checkpoint-202
-    # saved/mmlu_pro/grpo-two-stage-qwen3-8b-AG-TUNE-OR/checkpoint-202
-
     # saved/gpqa/grpo-two-stage-qwen3-4b-CR-AG-TUNE-OR/checkpoint-89
-    # saved/gpqa/grpo-two-stage-qwen3-8b-CR-AG-TUNE-OR/checkpoint-89
 
-    # saved/mmlu_pro/grpo-two-stage-qwen3-4b-CR-AG-TUNE-OR/checkpoint-202
-    # saved/mmlu_pro/grpo-two-stage-qwen3-8b-CR-AG-TUNE-OR/checkpoint-202
-
-    # saved/gpqa_natural/grpo-two-stage-qwen3-4b-AG-TUNE-OR/checkpoint-89
-    # saved/gpqa_natural/grpo-two-stage-qwen3-4b-CR-AG-TUNE-OR/checkpoint-89
-
-    # saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-AG-TUNE-OR/checkpoint-202
-    # saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-CR-AG-TUNE-OR/checkpoint-202
-
-    # saved/gpqa_natural/grpo-two-stage-qwen3-8b-AG-TUNE-OR/checkpoint-89
-    # saved/gpqa_natural/grpo-two-stage-qwen3-8b-CR-AG-TUNE-OR/checkpoint-89
-
-    # saved/mmlu_pro_natural/grpo-two-stage-qwen3-8b-AG-TUNE-OR/checkpoint-202
-    # saved/mmlu_pro_natural/grpo-two-stage-qwen3-8b-CR-AG-TUNE-OR/checkpoint-202
-
-    # ============
     # MA-Outcome
-    # ============
     # saved/gpqa/grpo-two-stage-qwen3-4b-JP-TUNE-PRR/checkpoint-89
     # saved/gpqa/grpo-two-stage-qwen3-4b-NS-TUNE-OR/checkpoint-89
 
-    # saved/mmlu_pro/grpo-two-stage-qwen3-4b-JP-TUNE-PRR/checkpoint-202
-    # saved/mmlu_pro/grpo-two-stage-qwen3-4b-NS-TUNE-OR/checkpoint-202
-
-    # saved/gpqa/grpo-two-stage-qwen3-8b-JP-TUNE-PRR/checkpoint-89
-    # saved/gpqa/grpo-two-stage-qwen3-8b-NS-TUNE-OR/checkpoint-89
-
-    # saved/mmlu_pro/grpo-two-stage-qwen3-8b-JP-TUNE-PRR/checkpoint-202
-    # saved/mmlu_pro/grpo-two-stage-qwen3-8b-NS-TUNE-OR/checkpoint-202
-
-    # saved/gpqa_natural/grpo-two-stage-qwen3-4b-JP-TUNE-PRR/checkpoint-89
-    # saved/gpqa_natural/grpo-two-stage-qwen3-4b-NS-TUNE-OR/checkpoint-89
-
-    # saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-JP-TUNE-PRR/checkpoint-202
-    # saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-NS-TUNE-OR/checkpoint-202
-
-    # saved/gpqa_natural/grpo-two-stage-qwen3-8b-JP-TUNE-PRR/checkpoint-89
-    # saved/gpqa_natural/grpo-two-stage-qwen3-8b-NS-TUNE-OR/checkpoint-89
-
-    # saved/mmlu_pro_natural/grpo-two-stage-qwen3-8b-JP-TUNE-PRR/checkpoint-202
-    # saved/mmlu_pro_natural/grpo-two-stage-qwen3-8b-NS-TUNE-OR/checkpoint-202
-
-    # ============
     # MA-Reasoning
-    # ============
     # saved/gpqa/grpo-two-stage-qwen3-4b-CR-JP-TUNE-PRR/checkpoint-89
     # saved/gpqa/grpo-two-stage-qwen3-4b-CR-NS-TUNE-OR/checkpoint-89
-
-    # saved/mmlu_pro/grpo-two-stage-qwen3-4b-CR-JP-TUNE-PRR/checkpoint-202
-    # saved/mmlu_pro/grpo-two-stage-qwen3-4b-CR-NS-TUNE-OR/checkpoint-202
-
-    # saved/gpqa/grpo-two-stage-qwen3-8b-CR-JP-TUNE-PRR/checkpoint-89
-    # saved/gpqa/grpo-two-stage-qwen3-8b-CR-NS-TUNE-OR/checkpoint-89
-
-    # saved/mmlu_pro/grpo-two-stage-qwen3-8b-CR-JP-TUNE-PRR/checkpoint-202
-    # saved/mmlu_pro/grpo-two-stage-qwen3-8b-CR-NS-TUNE-OR/checkpoint-202
-
-    # saved/gpqa_natural/grpo-two-stage-qwen3-4b-CR-JP-TUNE-PRR/checkpoint-89
-    # saved/gpqa_natural/grpo-two-stage-qwen3-4b-CR-NS-TUNE-OR/checkpoint-89
-
-    # saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-CR-JP-TUNE-PRR/checkpoint-202
-    # saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-CR-NS-TUNE-OR/checkpoint-202
-
-    # saved/gpqa_natural/grpo-two-stage-qwen3-8b-CR-JP-TUNE-PRR/checkpoint-89
-    # saved/gpqa_natural/grpo-two-stage-qwen3-8b-CR-NS-TUNE-OR/checkpoint-89
-
-    # saved/mmlu_pro_natural/grpo-two-stage-qwen3-8b-CR-JP-TUNE-PRR/checkpoint-202
-    # saved/mmlu_pro_natural/grpo-two-stage-qwen3-8b-CR-NS-TUNE-OR/checkpoint-202
-
-    # ============
-    # Ablations
-    # ============
-    # saved/mmlu_pro/grpo-two-stage-qwen3-4b-N21-CR-AG-TUNE-OR/checkpoint-202
-    # saved/mmlu_pro/grpo-two-stage-qwen3-4b-N31-CR-AG-TUNE-OR/checkpoint-202
-
-    # saved/mmlu_pro/grpo-two-stage-qwen3-4b-N21-CR-JP-TUNE-PRR/checkpoint-202
-    # saved/mmlu_pro/grpo-two-stage-qwen3-4b-N21-CR-NS-TUNE-OR/checkpoint-202
-
-    # saved/mmlu_pro/grpo-two-stage-qwen3-4b-N31-CR-JP-TUNE-PRR/checkpoint-202
-    # saved/mmlu_pro/grpo-two-stage-qwen3-4b-N31-CR-NS-TUNE-OR/checkpoint-202
-
-    # saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-N21-CR-JP-TUNE-PRR/checkpoint-202
-    # saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-N21-CR-NS-TUNE-OR/checkpoint-202
-
-    # saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-N31-CR-JP-TUNE-PRR/checkpoint-202
-    # saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-N31-CR-NS-TUNE-OR/checkpoint-202
-
-    # saved/mmlu_pro/grpo-two-stage-qwen3-4b-H2-CR-JP-TUNE-PRR/checkpoint-202
-    # saved/mmlu_pro/grpo-two-stage-qwen3-4b-H2-CR-NS-TUNE-OR/checkpoint-202
-
-    # saved/mmlu_pro/grpo-two-stage-qwen3-4b-H8-CR-JP-TUNE-PRR/checkpoint-202
-    # saved/mmlu_pro/grpo-two-stage-qwen3-4b-H8-CR-NS-TUNE-OR/checkpoint-202
 )
 VLLM_IPS=(
     "0.0.0.0" 
     "0.0.0.0"
     "0.0.0.0"
     "0.0.0.0"
-    # "0.0.0.0"
-    # "0.0.0.0"
 )
 VLLM_PORT_NUMBERS=(
     "9090"     
     "9091"
     "9092"
     "9093"
-    # "9094"
-    # "9095"
 )
 VLLM_CUDA_DEVICES=(
-    # "0"
-    # "1"
-    # "2"
-    # "3"
-    # "0,1"
-    # "2,3"
-    "0,1,2,3"
+    "0"
+    "1"
+    "2"
+    "3"
 )
 MAX_LENGTH=40960
 
@@ -163,263 +53,90 @@ MAX_LENGTH=40960
 # MAS Evaluation Configuration
 # ==============================
 EVAL_MODELS=(
-    # ============
-    # Base Models
-    # ============
+    # Base
+    "Qwen/Qwen3-4B-Instruct-2507 Qwen/Qwen3-4B-Instruct-2507 Qwen/Qwen3-4B-Instruct-2507 Qwen/Qwen3-4B-Instruct-2507 Qwen/Qwen3-4B-Instruct-2507 Qwen/Qwen3-4B-Instruct-2507"
+
     # "deepseek/deepseek-v3.2 deepseek/deepseek-v3.2 deepseek/deepseek-v3.2 deepseek/deepseek-v3.2 deepseek/deepseek-v3.2 deepseek/deepseek-v3.2"
     # "openai/gpt-5-mini openai/gpt-5-mini openai/gpt-5-mini openai/gpt-5-mini openai/gpt-5-mini openai/gpt-5-mini"
     # "openai/gpt-5.2 openai/gpt-5.2 openai/gpt-5.2 openai/gpt-5.2 openai/gpt-5.2 openai/gpt-5.2"
     # "google/gemini-3-flash-preview google/gemini-3-flash-preview google/gemini-3-flash-preview google/gemini-3-flash-preview google/gemini-3-flash-preview google/gemini-3-flash-preview"
     # "google/gemini-3-pro-preview google/gemini-3-pro-preview google/gemini-3-pro-preview google/gemini-3-pro-preview google/gemini-3-pro-preview google/gemini-3-pro-preview"
 
-    # "Qwen/Qwen3-4B-Instruct-2507 Qwen/Qwen3-4B-Instruct-2507 Qwen/Qwen3-4B-Instruct-2507 Qwen/Qwen3-4B-Instruct-2507 Qwen/Qwen3-4B-Instruct-2507 Qwen/Qwen3-4B-Instruct-2507"
-    "Qwen/Qwen3-8B Qwen/Qwen3-8B Qwen/Qwen3-8B Qwen/Qwen3-8B Qwen/Qwen3-8B Qwen/Qwen3-8B"
-    # "Qwen/Qwen3-30B-A3B-Thinking-2507 Qwen/Qwen3-30B-A3B-Thinking-2507 Qwen/Qwen3-30B-A3B-Thinking-2507 Qwen/Qwen3-30B-A3B-Thinking-2507 Qwen/Qwen3-30B-A3B-Thinking-2507 Qwen/Qwen3-30B-A3B-Thinking-2507"
-
-    # ============
-    # Single Agent
-    # ============
+    # SA
     # "saved/gpqa/grpo-two-stage-qwen3-4b-nonMAS-NS-TUNE-OR/checkpoint-89 saved/gpqa/grpo-two-stage-qwen3-4b-nonMAS-NS-TUNE-OR/checkpoint-89"
-    # "saved/gpqa/grpo-two-stage-qwen3-8b-nonMAS-NS-TUNE-OR/checkpoint-89 saved/gpqa/grpo-two-stage-qwen3-8b-nonMAS-NS-TUNE-OR/checkpoint-89"
-
-    # "saved/mmlu_pro/grpo-two-stage-qwen3-4b-nonMAS-NS-TUNE-OR/checkpoint-202 saved/mmlu_pro/grpo-two-stage-qwen3-4b-nonMAS-NS-TUNE-OR/checkpoint-202"
-    # "saved/mmlu_pro/grpo-two-stage-qwen3-8b-nonMAS-NS-TUNE-OR/checkpoint-202 saved/mmlu_pro/grpo-two-stage-qwen3-8b-nonMAS-NS-TUNE-OR/checkpoint-202"
     
-    # ============
-    # Memoryless Aggregator
-    # ============
+    # AG
     # "saved/gpqa/grpo-two-stage-qwen3-4b-AG-TUNE-OR/checkpoint-89 saved/gpqa/grpo-two-stage-qwen3-4b-AG-TUNE-OR/checkpoint-89"
-    # "saved/gpqa/grpo-two-stage-qwen3-8b-AG-TUNE-OR/checkpoint-89 saved/gpqa/grpo-two-stage-qwen3-8b-AG-TUNE-OR/checkpoint-89"
-
-    # "saved/mmlu_pro/grpo-two-stage-qwen3-4b-AG-TUNE-OR/checkpoint-202 saved/mmlu_pro/grpo-two-stage-qwen3-4b-AG-TUNE-OR/checkpoint-202"
-    # "saved/mmlu_pro/grpo-two-stage-qwen3-8b-AG-TUNE-OR/checkpoint-202 saved/mmlu_pro/grpo-two-stage-qwen3-8b-AG-TUNE-OR/checkpoint-202"
-
     # "saved/gpqa/grpo-two-stage-qwen3-4b-CR-AG-TUNE-OR/checkpoint-89 saved/gpqa/grpo-two-stage-qwen3-4b-CR-AG-TUNE-OR/checkpoint-89"
-    # "saved/gpqa/grpo-two-stage-qwen3-8b-CR-AG-TUNE-OR/checkpoint-89 saved/gpqa/grpo-two-stage-qwen3-8b-CR-AG-TUNE-OR/checkpoint-89"
-
-    # "saved/mmlu_pro/grpo-two-stage-qwen3-4b-CR-AG-TUNE-OR/checkpoint-202 saved/mmlu_pro/grpo-two-stage-qwen3-4b-CR-AG-TUNE-OR/checkpoint-202"
-    # "saved/mmlu_pro/grpo-two-stage-qwen3-8b-CR-AG-TUNE-OR/checkpoint-202 saved/mmlu_pro/grpo-two-stage-qwen3-8b-CR-AG-TUNE-OR/checkpoint-202"
-
-    # "saved/gpqa_natural/grpo-two-stage-qwen3-4b-AG-TUNE-OR/checkpoint-89 saved/gpqa_natural/grpo-two-stage-qwen3-4b-AG-TUNE-OR/checkpoint-89"
-    # "saved/gpqa_natural/grpo-two-stage-qwen3-4b-CR-AG-TUNE-OR/checkpoint-89 saved/gpqa_natural/grpo-two-stage-qwen3-4b-CR-AG-TUNE-OR/checkpoint-89"
-
-    # "saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-AG-TUNE-OR/checkpoint-202 saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-AG-TUNE-OR/checkpoint-202"
-    # "saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-CR-AG-TUNE-OR/checkpoint-202 saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-CR-AG-TUNE-OR/checkpoint-202"
-
-    # "saved/gpqa_natural/grpo-two-stage-qwen3-8b-AG-TUNE-OR/checkpoint-89 saved/gpqa_natural/grpo-two-stage-qwen3-8b-AG-TUNE-OR/checkpoint-89"
-    # "saved/gpqa_natural/grpo-two-stage-qwen3-8b-CR-AG-TUNE-OR/checkpoint-89 saved/gpqa_natural/grpo-two-stage-qwen3-8b-CR-AG-TUNE-OR/checkpoint-89"
-
-    # "saved/mmlu_pro_natural/grpo-two-stage-qwen3-8b-AG-TUNE-OR/checkpoint-202 saved/mmlu_pro_natural/grpo-two-stage-qwen3-8b-AG-TUNE-OR/checkpoint-202"
-    # "saved/mmlu_pro_natural/grpo-two-stage-qwen3-8b-CR-AG-TUNE-OR/checkpoint-202 saved/mmlu_pro_natural/grpo-two-stage-qwen3-8b-CR-AG-TUNE-OR/checkpoint-202"
     
-    # ============
     # MA-Outcome
-    # ============
     # "saved/gpqa/grpo-two-stage-qwen3-4b-JP-TUNE-PRR/checkpoint-89 saved/gpqa/grpo-two-stage-qwen3-4b-JP-TUNE-PRR/checkpoint-89"
     # "saved/gpqa/grpo-two-stage-qwen3-4b-NS-TUNE-OR/checkpoint-89 saved/gpqa/grpo-two-stage-qwen3-4b-NS-TUNE-OR/checkpoint-89"
     
-    # "saved/mmlu_pro/grpo-two-stage-qwen3-4b-JP-TUNE-PRR/checkpoint-202 saved/mmlu_pro/grpo-two-stage-qwen3-4b-JP-TUNE-PRR/checkpoint-202"
-    # "saved/mmlu_pro/grpo-two-stage-qwen3-4b-NS-TUNE-OR/checkpoint-202 saved/mmlu_pro/grpo-two-stage-qwen3-4b-NS-TUNE-OR/checkpoint-202"
-    
-    # "saved/gpqa/grpo-two-stage-qwen3-8b-JP-TUNE-PRR/checkpoint-89 saved/gpqa/grpo-two-stage-qwen3-8b-JP-TUNE-PRR/checkpoint-89"
-    # "saved/gpqa/grpo-two-stage-qwen3-8b-NS-TUNE-OR/checkpoint-89 saved/gpqa/grpo-two-stage-qwen3-8b-NS-TUNE-OR/checkpoint-89"
-    
-    # "saved/mmlu_pro/grpo-two-stage-qwen3-8b-JP-TUNE-PRR/checkpoint-202 saved/mmlu_pro/grpo-two-stage-qwen3-8b-JP-TUNE-PRR/checkpoint-202"
-    # "saved/mmlu_pro/grpo-two-stage-qwen3-8b-NS-TUNE-OR/checkpoint-202 saved/mmlu_pro/grpo-two-stage-qwen3-8b-NS-TUNE-OR/checkpoint-202"
-    
-    # "saved/gpqa_natural/grpo-two-stage-qwen3-4b-JP-TUNE-PRR/checkpoint-89 saved/gpqa_natural/grpo-two-stage-qwen3-4b-JP-TUNE-PRR/checkpoint-89"
-    # "saved/gpqa_natural/grpo-two-stage-qwen3-4b-NS-TUNE-OR/checkpoint-89 saved/gpqa_natural/grpo-two-stage-qwen3-4b-NS-TUNE-OR/checkpoint-89"
-
-    # "saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-JP-TUNE-PRR/checkpoint-202 saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-JP-TUNE-PRR/checkpoint-202"
-    # "saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-NS-TUNE-OR/checkpoint-202 saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-NS-TUNE-OR/checkpoint-202"
-    
-    # "saved/gpqa_natural/grpo-two-stage-qwen3-8b-JP-TUNE-PRR/checkpoint-89 saved/gpqa_natural/grpo-two-stage-qwen3-8b-JP-TUNE-PRR/checkpoint-89"
-    # "saved/gpqa_natural/grpo-two-stage-qwen3-8b-NS-TUNE-OR/checkpoint-89 saved/gpqa_natural/grpo-two-stage-qwen3-8b-NS-TUNE-OR/checkpoint-89"
-
-    # "saved/mmlu_pro_natural/grpo-two-stage-qwen3-8b-JP-TUNE-PRR/checkpoint-202 saved/mmlu_pro_natural/grpo-two-stage-qwen3-8b-JP-TUNE-PRR/checkpoint-202"
-    # "saved/mmlu_pro_natural/grpo-two-stage-qwen3-8b-NS-TUNE-OR/checkpoint-202 saved/mmlu_pro_natural/grpo-two-stage-qwen3-8b-NS-TUNE-OR/checkpoint-202"
-    
-    # ============
     # MA-Reasoning
-    # ============
     # "saved/gpqa/grpo-two-stage-qwen3-4b-CR-JP-TUNE-PRR/checkpoint-89 saved/gpqa/grpo-two-stage-qwen3-4b-CR-JP-TUNE-PRR/checkpoint-89"
     # "saved/gpqa/grpo-two-stage-qwen3-4b-CR-NS-TUNE-OR/checkpoint-89 saved/gpqa/grpo-two-stage-qwen3-4b-CR-NS-TUNE-OR/checkpoint-89"
-    
-    # "saved/mmlu_pro/grpo-two-stage-qwen3-4b-CR-JP-TUNE-PRR/checkpoint-202 saved/mmlu_pro/grpo-two-stage-qwen3-4b-CR-JP-TUNE-PRR/checkpoint-202"
-    # "saved/mmlu_pro/grpo-two-stage-qwen3-4b-CR-NS-TUNE-OR/checkpoint-202 saved/mmlu_pro/grpo-two-stage-qwen3-4b-CR-NS-TUNE-OR/checkpoint-202"
-    
-    # "saved/gpqa/grpo-two-stage-qwen3-8b-CR-JP-TUNE-PRR/checkpoint-89 saved/gpqa/grpo-two-stage-qwen3-8b-CR-JP-TUNE-PRR/checkpoint-89"
-    # "saved/gpqa/grpo-two-stage-qwen3-8b-CR-NS-TUNE-OR/checkpoint-89 saved/gpqa/grpo-two-stage-qwen3-8b-CR-NS-TUNE-OR/checkpoint-89"
-    
-    # "saved/mmlu_pro/grpo-two-stage-qwen3-8b-CR-JP-TUNE-PRR/checkpoint-202 saved/mmlu_pro/grpo-two-stage-qwen3-8b-CR-JP-TUNE-PRR/checkpoint-202"
-    # "saved/mmlu_pro/grpo-two-stage-qwen3-8b-CR-NS-TUNE-OR/checkpoint-202 saved/mmlu_pro/grpo-two-stage-qwen3-8b-CR-NS-TUNE-OR/checkpoint-202"
-    
-    # "saved/gpqa_natural/grpo-two-stage-qwen3-4b-CR-JP-TUNE-PRR/checkpoint-89 saved/gpqa_natural/grpo-two-stage-qwen3-4b-CR-JP-TUNE-PRR/checkpoint-89"
-    # "saved/gpqa_natural/grpo-two-stage-qwen3-4b-CR-NS-TUNE-OR/checkpoint-89 saved/gpqa_natural/grpo-two-stage-qwen3-4b-CR-NS-TUNE-OR/checkpoint-89"
-
-    # "saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-CR-JP-TUNE-PRR/checkpoint-202 saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-CR-JP-TUNE-PRR/checkpoint-202"
-    # "saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-CR-NS-TUNE-OR/checkpoint-202 saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-CR-NS-TUNE-OR/checkpoint-202"
-
-    # "saved/gpqa_natural/grpo-two-stage-qwen3-8b-CR-JP-TUNE-PRR/checkpoint-89 saved/gpqa_natural/grpo-two-stage-qwen3-8b-CR-JP-TUNE-PRR/checkpoint-89"
-    # "saved/gpqa_natural/grpo-two-stage-qwen3-8b-CR-NS-TUNE-OR/checkpoint-89 saved/gpqa_natural/grpo-two-stage-qwen3-8b-CR-NS-TUNE-OR/checkpoint-89"
-
-    # "saved/mmlu_pro_natural/grpo-two-stage-qwen3-8b-CR-JP-TUNE-PRR/checkpoint-202 saved/mmlu_pro_natural/grpo-two-stage-qwen3-8b-CR-JP-TUNE-PRR/checkpoint-202"
-    # "saved/mmlu_pro_natural/grpo-two-stage-qwen3-8b-CR-NS-TUNE-OR/checkpoint-202 saved/mmlu_pro_natural/grpo-two-stage-qwen3-8b-CR-NS-TUNE-OR/checkpoint-202"
-
-    # ============
-    # Ablations
-    # ============
-    # "saved/mmlu_pro/grpo-two-stage-qwen3-4b-N21-CR-AG-TUNE-OR/checkpoint-202 saved/mmlu_pro/grpo-two-stage-qwen3-4b-N21-CR-AG-TUNE-OR/checkpoint-202"
-    # "saved/mmlu_pro/grpo-two-stage-qwen3-4b-N31-CR-AG-TUNE-OR/checkpoint-202 saved/mmlu_pro/grpo-two-stage-qwen3-4b-N31-CR-AG-TUNE-OR/checkpoint-202"
-
-    # "saved/mmlu_pro/grpo-two-stage-qwen3-4b-N21-CR-JP-TUNE-PRR/checkpoint-202 saved/mmlu_pro/grpo-two-stage-qwen3-4b-N21-CR-JP-TUNE-PRR/checkpoint-202"
-    # "saved/mmlu_pro/grpo-two-stage-qwen3-4b-N21-CR-NS-TUNE-OR/checkpoint-202 saved/mmlu_pro/grpo-two-stage-qwen3-4b-N21-CR-NS-TUNE-OR/checkpoint-202"
-
-    # "saved/mmlu_pro/grpo-two-stage-qwen3-4b-N31-CR-JP-TUNE-PRR/checkpoint-202 saved/mmlu_pro/grpo-two-stage-qwen3-4b-N31-CR-JP-TUNE-PRR/checkpoint-202"
-    # "saved/mmlu_pro/grpo-two-stage-qwen3-4b-N31-CR-NS-TUNE-OR/checkpoint-202 saved/mmlu_pro/grpo-two-stage-qwen3-4b-N31-CR-NS-TUNE-OR/checkpoint-202"
-    
-    # "saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-N21-CR-JP-TUNE-PRR/checkpoint-202 saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-N21-CR-JP-TUNE-PRR/checkpoint-202"
-    # "saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-N21-CR-NS-TUNE-OR/checkpoint-202 saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-N21-CR-NS-TUNE-OR/checkpoint-202"
-    
-    # "saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-N31-CR-JP-TUNE-PRR/checkpoint-202 saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-N31-CR-JP-TUNE-PRR/checkpoint-202"
-    # "saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-N31-CR-NS-TUNE-OR/checkpoint-202 saved/mmlu_pro_natural/grpo-two-stage-qwen3-4b-N31-CR-NS-TUNE-OR/checkpoint-202"
-
-    # "saved/mmlu_pro/grpo-two-stage-qwen3-4b-H2-CR-JP-TUNE-PRR/checkpoint-202 saved/mmlu_pro/grpo-two-stage-qwen3-4b-H2-CR-JP-TUNE-PRR/checkpoint-202"
-    # "saved/mmlu_pro/grpo-two-stage-qwen3-4b-H2-CR-NS-TUNE-OR/checkpoint-202 saved/mmlu_pro/grpo-two-stage-qwen3-4b-H2-CR-NS-TUNE-OR/checkpoint-202"
-
-    # "saved/mmlu_pro/grpo-two-stage-qwen3-4b-H8-CR-JP-TUNE-PRR/checkpoint-202 saved/mmlu_pro/grpo-two-stage-qwen3-4b-H8-CR-JP-TUNE-PRR/checkpoint-202"
-    # "saved/mmlu_pro/grpo-two-stage-qwen3-4b-H8-CR-NS-TUNE-OR/checkpoint-202 saved/mmlu_pro/grpo-two-stage-qwen3-4b-H8-CR-NS-TUNE-OR/checkpoint-202"
 )
 EVAL_DATASETS=(
     # gpqa_formatted
-    # gpqa_formatted
-    # gpqa_formatted
-    # gpqa_formatted
-    # mmlu_pro
-    # mmlu_pro
-    # mmlu_pro
     # mmlu_pro
     # gpqa_natural
-    # gpqa_natural
-    # gpqa_natural
-    # gpqa_natural
-    mmlu_pro_natural
-    # mmlu_pro_natural
-    # mmlu_pro_natural
     # mmlu_pro_natural
 )
 EVAL_CURRENT_REASON=(
-    # "1 1 1 1 1 1"
     "0 0 0 1 1 1"
-    # "0 0 0 1 1 1"
-    "1 1"
-    "1 1"
-    "1 1"
-    "1 1"
+    # "1 1"
     # "0 0"
-    # "0 0"
-    # "0 0"
-    # "0 0"
-    # "0 1"
-    # "0 1"
-    # "0 1"
     # "0 1"
 )
 EVAL_HISTORY_REASON=(
     "0 0 0 0 0 0"
-    # "0 0 0 0 0 0"
-    "0 0"
-    "0 0"
-    "0 0"
-    "0 0"
-    # "0 0"
     # "0 0"
 )
 EVAL_REVERT_IDENTITY=(
     "0 0 0 0 0 0"
-    # "0 0 0 0 0 0"
-    # "1 0"
-    # "1 0"
-    # "1 0"
     # "1 0"
     # "2 0"
-    # "2 0"
-    # "2 0"
-    # "2 0"
-    "0 0"
-    "0 0"
-    "0 0"
-    "0 0"
-    # "1 0"
+    # "0 0"
 )
 EVAL_IPS=(
     "0.0.0.0 0.0.0.0 0.0.0.0 0.0.0.0 0.0.0.0 0.0.0.0"
-    # "0.0.0.0 0.0.0.0 0.0.0.0 0.0.0.0 0.0.0.0 0.0.0.0"
-    "0.0.0.0 0.0.0.0"
-    "0.0.0.0 0.0.0.0"
-    "0.0.0.0 0.0.0.0"
-    "0.0.0.0 0.0.0.0"
+    # "0.0.0.0 0.0.0.0"
+    # "0.0.0.0 0.0.0.0"
     # "0.0.0.0 0.0.0.0"
     # "0.0.0.0 0.0.0.0"
 )
 EVAL_PORT_NUMBERS=(
     "9090 9090 9090 9090 9090 9090"
-    # "9091 9091 9091 9091 9091 9091"
-    "9090 9090"
-    "9091 9091"
-    "9092 9092"
-    "9093 9093"
-    # "9094 9094"
-    # "9095 9095"
+    # "9090 9090"
+    # "9091 9091"
+    # "9092 9092"
+    # "9093 9093"
 )
 EVAL_TAG_PEER=(
+    # Ablation: Number of Peers
+    # "2_1 2_1"
+    # "3_1 3_1"
     # "2_1 2_1 2_1 3_1 3_1 3_1"
+
+    # Ablation: Number of History Rounds
     # "4_1_2 4_1_2 4_1_2 4_1_8 4_1_8 4_1_8"
+    # "4_1_2 4_1_2"
+    # "4_1_8 4_1_8"
+
+    # Default Config
+    # "4_1 4_1"
     "4_1 4_1 4_1 4_1 4_1 4_1"
-    # "4_1 4_1 4_1 4_1 4_1 4_1"
-    # "2_1 2_1"
-    # "2_1 2_1"
-    # "3_1 3_1"
-    # "3_1 3_1"
-    # "4_1 4_1"
-    # "4_1 4_1"
-    # "4_1 4_1"
-    # "4_1 4_1"
-    # "4_1_2 4_1_2"
-    # "4_1_2 4_1_2"
-    # "4_1_8 4_1_8"
-    # "4_1_8 4_1_8"
 )
 EVAL_TAG_PROMPT=(
     "AG NS JP AG NS JP"
-    # "AG NS JP AG NS JP"
-    # "NS JP NS JP"
     # "JP JP"
-    # "JP JP"
-    # "JP JP"
-    "JP JP"
-    "NS NS"
-    "JP JP"
-    "NS NS"
     # "NS NS"
-    # "NS NS"
-    # "NS NS"
-    # "AG AG"
-    # "AG AG"
-    # "AG AG"
     # "AG AG"
 )
 EVAL_DECOUPLE_BELIEF=(
     "0 0 0 0 0 0"
-    # "0 0 0 0 0 0"
     # "1 1"
-    # "1 1"
-    # "1 1"
-    # "1 1"
-    "0 0"
-    "0 0"
-    "0 0"
-    "0 0"
     # "0 0"
 )
 EVAL_MODE="normal"
