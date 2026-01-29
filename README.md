@@ -82,7 +82,7 @@ Config files needed to reproduce the main evaluation results and analytic result
 
 * `add_peers`: `MA context` will be used when set as `true`, `SA context` when set as `false`.
 * `add_current_reasoning`: `MA-Reasoning` context will be used when set as `true`, `MA-Outcome` when set as `false`. **Valid only when `add_peers` set as `true`**.
-* `output_dir`: This variable serves several purposes, please specify in forms of `SAVE_ROOT/DATASET/CONFIG_NAME`
+* `output_dir`: This variable serves several purposes, please specify in forms of `SAVE_ROOT/DATASET/CONFIG_NAME`. Refer to [this part](ECL/train.py#L122-L173) for details.
     - `SAVE_ROOT` only specifies the path for saving model checkpoints and does not affect the setting.
     - `DATASET` determines whether natural or adversarial task setting is used. Adding `_natural` suffix like `gpqa_natural` will select the natural setting, otherwise the adversarial setting.
     - `CONFIG_NAME` determines the rewards in RL and whether the `DB` trick is used.
