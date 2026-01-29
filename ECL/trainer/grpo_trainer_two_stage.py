@@ -172,7 +172,6 @@ class GRPOTrainerTwoStage(GRPOTrainer):
     
     def __init__(self, *args, **kwargs):
         # Check whether stage 2 training with OR is helpful
-        self.ablation_stage2_training = kwargs.pop("ablation_stage2_training", False)
         self.decouple_internal_belief = kwargs.pop("decouple_internal_belief", False)
 
         model_init_kwargs = kwargs["args"].model_init_kwargs or {}
@@ -1885,9 +1884,6 @@ class GRPOTrainerTwoStage(GRPOTrainer):
         for key in stages_to_process:
             # Skip stages if they don't have advantages (shouldn't happen, but safety check)
             if "advantages" not in inputs[key]:
-                continue
-            
-            if key == "stage2" and self.ablation_stage2_training:
                 continue
                 
             prompt_ids, prompt_mask = inputs[key]["prompt_ids"], inputs[key]["prompt_mask"]

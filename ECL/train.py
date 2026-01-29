@@ -119,7 +119,6 @@ def main():
     is_llama_format = "llama" in model_args.model_name_or_path.lower()
     is_qwen3_format = "qwen3" in model_args.model_name_or_path.lower()
     
-    ablation_stage2_training = "-ABS2" in training_args.output_dir
     decouple_internal_belief = "-DB" in training_args.output_dir
     data_type = "nat" if "_natural" in training_args.output_dir else "adv"
     print("Data Type:", data_type)
@@ -416,7 +415,6 @@ def main():
         is_llama_format=is_llama_format,
         is_qwen3_format=is_qwen3_format,
         is_ds_format=is_ds_format,
-        ablation_stage2_training=ablation_stage2_training,
         decouple_internal_belief=decouple_internal_belief,
         train_dataset=train_dataset,
         eval_dataset=eval_dataset,
