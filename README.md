@@ -1,6 +1,6 @@
 # Epistemic Context Learning
 
-Codes and data for our paper [Epistemic Context Learning: Building Trust the Right Way in LLM-Based Multi-Agent Systems](https://arxiv.org/abs/2601.XXXXX)
+Codes and data for: [Epistemic Context Learning: Building Trust the Right Way in LLM-Based Multi-Agent Systems](https://arxiv.org/abs/2601.XXXXX)
 
 ### :mag: Overview
 
